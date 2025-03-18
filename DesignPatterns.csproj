@@ -13,8 +13,4 @@
     <PackageReference Include="MSTest.TestFramework" Version="3.8.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="SOLID\" />
-  </ItemGroup>
-
 </Project>
