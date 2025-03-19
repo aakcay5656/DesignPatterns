@@ -281,6 +281,7 @@ Console.WriteLine(doc.State);
 a spesific compression algorithm, such as MOV or MP4, then, if necessary, apply an overlay to the video, such as black and white or blur.
  */
 
+/*
 using DesignPatterns.DesignPatters.Behavioral.Strategy.GoodSoluition;
 
 var videoStore = new VideoStorage(new CompressorMOV(),new OverlaysBlackAndWhite());
@@ -290,4 +291,29 @@ videoStore.Store("/videos/theFall-2006");
 videoStore.SetCompressor(new CompressorMP4());
 videoStore.SetOverlay(new OverlayBlur());
 videoStore.Store("/videos/theThing-1982");
+*/
 
+
+// Iterator Pattern 
+
+/* 
+ 
+ The Iterator Pattern provides a way of iterating over an object without having to expose the object's internal structure, which may change in the future.
+ Changing the internals of an object should not affect its consumers.
+ */
+using DesignPatterns.DesignPatters.Behavioral.Iterator.GoodSolution;
+
+ShoppingList list = new ShoppingList();
+
+list.Push("Apple");
+list.Push("Milk");
+list.Push("Steak");
+
+
+var iterator = list.CreateIterator();
+
+while (iterator.HasNext())
+{
+    Console.WriteLine(iterator.Current());
+    iterator.Next();
+}
