@@ -301,6 +301,7 @@ videoStore.Store("/videos/theThing-1982");
  The Iterator Pattern provides a way of iterating over an object without having to expose the object's internal structure, which may change in the future.
  Changing the internals of an object should not affect its consumers.
  */
+/*
 using DesignPatterns.DesignPatters.Behavioral.Iterator.GoodSolution;
 
 ShoppingList list = new ShoppingList();
@@ -317,3 +318,36 @@ while (iterator.HasNext())
     Console.WriteLine(iterator.Current());
     iterator.Next();
 }
+*/
+
+// Command Pattern 
+
+/*
+    The Command Pattern is a behavioral design pattern that encapsulates a request as an object, allowing you to parameterize clients with quesuses, requests, or operations.
+    It enables you to decouple the sender from the receiver , providing flexibility in the execution of commands and supporting undoable operations.
+ */
+
+/*
+using DesignPatterns.DesignPatters.Behavioral.Command;
+
+var light = new Light();
+var remoteControl = new RemoteControl(light);
+
+remoteControl.PressButton(true);
+remoteControl.PressButton(false);
+*/
+
+
+using DesignPatterns.DesignPatters.Behavioral.Command.GoodSolution;
+
+
+var light = new Light();
+
+var remoteControl = new RemoteControl(new TurnOnCommand(light));
+remoteControl.PressButton();
+
+remoteControl.SetCommend(new TurnOffCommand(light));
+remoteControl.PressButton();
+
+remoteControl.SetCommend(new TurnDimCommand(light));
+remoteControl.PressButton();
