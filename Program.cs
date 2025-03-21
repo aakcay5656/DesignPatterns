@@ -337,7 +337,7 @@ remoteControl.PressButton(true);
 remoteControl.PressButton(false);
 */
 
-
+/*
 using DesignPatterns.DesignPatters.Behavioral.Command.GoodSolution;
 
 
@@ -351,3 +351,27 @@ remoteControl.PressButton();
 
 remoteControl.SetCommend(new TurnDimCommand(light));
 remoteControl.PressButton();
+
+*/
+
+using DesignPatterns.DesignPatters.Behavioral.Command.Undoable;
+
+var htmlDoc = new HtmlDocument();
+var history = new History();
+
+htmlDoc.Content = "merhaba dünya";
+
+Console.WriteLine(htmlDoc.Content);
+
+var italicCommand = new ItalicCommand(htmlDoc,history);
+italicCommand.Execute();
+Console.WriteLine(htmlDoc.Content);
+
+
+
+var undoCommand = new UndoCommand(history);
+undoCommand.Execute();
+
+Console.WriteLine(htmlDoc.Content);
+
+
