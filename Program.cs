@@ -320,7 +320,7 @@ while (iterator.HasNext())
 }
 */
 
-// Command Pattern 
+// Command Pattern:
 
 /*
     The Command Pattern is a behavioral design pattern that encapsulates a request as an object, allowing you to parameterize clients with quesuses, requests, or operations.
@@ -353,7 +353,7 @@ remoteControl.SetCommend(new TurnDimCommand(light));
 remoteControl.PressButton();
 
 */
-
+/*
 using DesignPatterns.DesignPatters.Behavioral.Command.Undoable;
 
 var htmlDoc = new HtmlDocument();
@@ -373,5 +373,29 @@ var undoCommand = new UndoCommand(history);
 undoCommand.Execute();
 
 Console.WriteLine(htmlDoc.Content);
+*/
 
+// Template Design Pattern
+/*
+using DesignPatterns.DesignPatters.Behavioral.Template.BadSolition;
 
+var tea = new Tea();
+
+tea.MakeBeverage();*/
+/*
+using DesignPatterns.DesignPatters.Behavioral.Template.StrategyPattern;
+
+var beverageMaker1 = new BeverageMaker(new Coffee());
+beverageMaker1.MakeBeverage();
+
+var beverageMaker2 = new BeverageMaker(new Tea());
+beverageMaker2.MakeBeverage();*/
+
+using DesignPatterns.DesignPatters.Behavioral.Template.TemplatePattern;
+
+var tea = new Tea();
+tea.Prepare();
+
+Console.WriteLine();
+var camomile = new Camomile();
+camomile.Prepare();
