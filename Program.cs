@@ -390,7 +390,7 @@ beverageMaker1.MakeBeverage();
 
 var beverageMaker2 = new BeverageMaker(new Tea());
 beverageMaker2.MakeBeverage();*/
-
+/*
 using DesignPatterns.DesignPatters.Behavioral.Template.TemplatePattern;
 
 var tea = new Tea();
@@ -399,3 +399,40 @@ tea.Prepare();
 Console.WriteLine();
 var camomile = new Camomile();
 camomile.Prepare();
+*/
+
+
+// Observer
+/*
+using DesignPatterns.DesignPatters.Behavioral.Observer;
+
+DataSource dataSource = new DataSource();
+
+Sheet2 sheet2 = new Sheet2();
+BarChart chart = new BarChart();
+
+dataSource.AddDependent(sheet2);
+dataSource.AddDependent(chart);
+
+dataSource.SetValues([5,10,2,0]);
+
+dataSource.SetValues([1,3,2]);
+*/
+
+using DesignPatterns.DesignPatters.Behavioral.Observer.GoodExample;
+
+DataSource dataSource = new DataSource();
+
+Sheet2 sheet = new Sheet2(dataSource);
+
+BarChart barChart = new BarChart(dataSource);
+
+dataSource.AddObserver(barChart);
+dataSource.AddObserver(sheet);
+
+dataSource.SetValues([1,2,3,4,5]);
+
+
+
+
+
