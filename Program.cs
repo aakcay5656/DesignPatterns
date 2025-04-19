@@ -418,7 +418,7 @@ dataSource.SetValues([5,10,2,0]);
 
 dataSource.SetValues([1,3,2]);
 */
-
+/*
 using DesignPatterns.DesignPatters.Behavioral.Observer.GoodExample;
 
 DataSource dataSource = new DataSource();
@@ -431,8 +431,12 @@ dataSource.AddObserver(barChart);
 dataSource.AddObserver(sheet);
 
 dataSource.SetValues([1,2,3,4,5]);
+*/
 
+using DesignPatterns.DesignPatters.Behavioral.Mediator;
 
+var postsDialogBox = new PostsDialogBox();
 
+postsDialogBox.SimulateUserIntraction();
 
 
